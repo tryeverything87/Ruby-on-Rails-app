@@ -1,0 +1,38 @@
+
+
+<div>
+
+    <div class="inner"> 
+
+        <form> 
+            <div class="form-group">
+                <input type="number" id="number"  placeholder="Enter BTC "/>
+            </div>
+
+            <div class="form-group">
+
+                <button type="button" class="btn" onClick="conversion();"> Convert </button
+            </div>
+        </form>
+        <div class="results">
+            <p id="result"> </p>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script>
+    var btc_usd = "<%=  @btc_price %>"; 
+    function conversion(){
+        var price = document.getElementById('number').value
+        if(!price){
+            price = 0
+        }
+        total = btc_usd * price  
+        console.log(total)
+        document.getElementById("result").innerHTML =  "$" + total 
+    }
+
+</script>
